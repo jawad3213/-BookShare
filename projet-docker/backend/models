@@ -1,0 +1,6 @@
+<script>start("c:\\Users\\Administrator\\Desktop\\ProjetG\\mon_projet_express\\mon_projet_express\\models\\");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("echangeModel.js","echangeModel.js",0,2558,"2.5 kB",1740163095,"2/21/25, 7:38:15 PM");</script>
+<script>addRow("empruntModel.js","empruntModel.js",0,1667,"1.6 kB",1740163095,"2/21/25, 7:38:15 PM");</script>
+<script>addRow("livreModel.js","livreModel.js",0,1483,"1.4 kB",1740163095,"2/21/25, 7:38:15 PM");</script>
+<script>addRow("utilisateurModel.js","utilisateurModel.js",0,1267,"1.2 kB",1740163095,"2/21/25, 7:38:15 PM");</script>
