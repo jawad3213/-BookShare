@@ -7,6 +7,9 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');  
 });
 
+const authRoute=require("./routes/auth");
+app.use("/authentification",authRoute);
+
 const utilisateurRoute = require("./routes/utilisateurs");
 app.use("/utilisateurs",utilisateurRoute);
 
