@@ -1,6 +1,0 @@
-<script>start("c:\\Users\\Administrator\\Desktop\\ProjetG\\mon_projet_express\\mon_projet_express\\routes\\");</script>
-<script>onHasParentDirectory();</script>
-<script>addRow("echanges.js","echanges.js",0,523,"523 B",1740163253,"2/21/25, 7:40:53 PM");</script>
-<script>addRow("emprunts.js","emprunts.js",0,524,"524 B",1740163253,"2/21/25, 7:40:53 PM");</script>
-<script>addRow("livres.js","livres.js",0,489,"489 B",1740163253,"2/21/25, 7:40:53 PM");</script>
-<script>addRow("utilisateurs.js","utilisateurs.js",0,459,"459 B",1740163254,"2/21/25, 7:40:54 PM");</script>

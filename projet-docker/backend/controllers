@@ -1,6 +1,0 @@
-<script>start("c:\\Users\\Administrator\\Desktop\\ProjetG\\mon_projet_express\\mon_projet_express\\controllers\\");</script>
-<script>onHasParentDirectory();</script>
-<script>addRow("echangesController.js","echangesController.js",0,6263,"6.1 kB",1740163094,"2/21/25, 7:38:14 PM");</script>
-<script>addRow("empruntsContoller.js","empruntsContoller.js",0,5196,"5.1 kB",1740163094,"2/21/25, 7:38:14 PM");</script>
-<script>addRow("livresController.js","livresController.js",0,5618,"5.5 kB",1740163094,"2/21/25, 7:38:14 PM");</script>
-<script>addRow("utilisateursController.js","utilisateursController.js",0,4839,"4.7 kB",1740163094,"2/21/25, 7:38:14 PM");</script>

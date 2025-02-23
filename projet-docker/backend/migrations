@@ -1,4 +1,0 @@
-<script>start("c:\\Users\\Administrator\\Desktop\\ProjetG\\mon_projet_express\\mon_projet_express\\migrations\\");</script>
-<script>onHasParentDirectory();</script>
-<script>addRow("20250219162605_create_test_table.js","20250219162605_create_test_table.js",0,230,"230 B",1740163095,"2/21/25, 7:38:15 PM");</script>
-<script>addRow("20250219164711_create_ajoutcolumn_utilisateurs.js","20250219164711_create_ajoutcolumn_utilisateurs.js",0,235,"235 B",1740163095,"2/21/25, 7:38:15 PM");</script>
