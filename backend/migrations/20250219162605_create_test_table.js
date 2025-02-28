@@ -4,7 +4,7 @@ exports.up = function(knex) {
     });
   };
   
-  exports.down = function(knex) {
-    return knex.schema.dropTable("test");
-  };
+exports.down = function(knex) {
+  return knex.schema.dropTable("test");
+};
   
