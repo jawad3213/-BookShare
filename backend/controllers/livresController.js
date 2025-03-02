@@ -1,5 +1,5 @@
 const livreModel = require("../models/livreModel");
-const { param ,body, validationResult } = require('express-validator');
+const { query,param ,body, validationResult } = require('express-validator');
 
 
 exports.AjoutLivre = [
@@ -40,16 +40,17 @@ async (req, res) => {
 ];
 
 exports.GetLivre = [
-    param('id')
-    .isInt({min:1}).withMessage("ID invalide"),
+    query('Titre')
+    .notEmpty().withMessage("Le titre est requis.")
+    .trim(),
 async (req, res) => {
     const errors=validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const id = req.params.id;
+    const {Titre} = req.query;
     try {
-        const livre = await livreModel.trouverLivre(id);
+        const livre = await livreModel.trouverLivre(Titre);
         if (livre) {
             return res.json(livre);
         } else {
@@ -156,7 +157,7 @@ async (req, res) => {
         const livre = await livreModel.empLivre(id_livre,id); 
         
         if (!livre) {
-            return res.status(404).json({ message: "Livre non trouvé ❌" });
+            return res.status(404).json({ message: "Livre non trouvé ou non disponible❌" });
         }
 
         return res.status(200).json({
