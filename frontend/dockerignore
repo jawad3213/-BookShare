@@ -1,0 +1,23 @@
+# Si vous avez un projet Vue/React/Angular (ou tout projet Node)
+node_modules
+
+# Fichiers de logs
+logs
+*.log
+
+# Fichiers et dossiers de config
+.git
+.gitignore
+.env
+.env.local
+
+# Ignorer les fichiers temporaires
+.DS_Store
+
+# Si vous avez déjà un dossier de build local (dist, build, etc.)
+dist
+build
+
+# Éventuellement, ignorer le Dockerfile
+Dockerfile
+Dockerfile.*
