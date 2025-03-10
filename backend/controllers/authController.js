@@ -229,56 +229,6 @@ async (req, res) => {
 }
 ];
 
-
-/*exports.resetPassword = [
-  verifyToken,
-  body('motDePasse1')
-    .notEmpty().withMessage("Le mot de passe est requis.")
-    .isLength({ min: 8 }).withMessage("Le mot de passe doit contenir au moins 8 caractères.")
-    .matches(/^(?=.*[A-Z])(?=.*\d)/).withMessage("Doit contenir au moins une majuscule et un chiffre."),
-  body('motDePasse2')
-    .notEmpty().withMessage("Le mot de passe est requis.")
-    .custom((value, { req }) => {
-      if (value !== req.body.motDePasse1) {
-        throw new Error("Veuillez entrer le même mot de passe.");
-      }
-      return true;
-    }),
-  body('date_naissance')
-    .notEmpty().withMessage("La date de naissance est requise."),
-  body('lieu_naissance')
-    .notEmpty().withMessage("Le lieu de naissance est requis.")
-    .trim()
-    .escape(),
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-    const { motDePasse1,date_naissance,lieu_naissance } = req.body;
-    const test1 = await authModel.verification(motDePasse1,req.user.id);
-    const test2 = await authModel.test(date_naissance,lieu_naissance,req.user.id);
-    try {
-      if (test1===1) {
-        return res.status(401).json({ message: "Ce mot de passe est déjà utilisé !!" });
-      }
-      if(test2==0){
-        return res.status(401).json({ message: "Le lieu ou la date de naissance sont pas valide !!" });
-      }
-      const motDePasseSecurise = await bcrypt.hash(motDePasse1, 10);
-      const result = await authModel.changement(motDePasseSecurise, req.user.id);
-      if (result) {
-        return res.status(201).json({ message: "Le mot de passe a été modifié avec succès" });
-      } else {
-        return res.status(400).json({ message: "La mise à jour a échoué." });
-      }
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: "Erreur serveur ❌" });
-    }
-  }
-];*/
-
  exports.resetPassword = [
   verifyToken,
   body('motDePasse1')
