@@ -1,0 +1,21 @@
+/* Styles globaux */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #EBEBEB;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: white;
+    background-color: rgb(40, 49, 99);
+    border-radius: 8px;
+  }
+  
