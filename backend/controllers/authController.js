@@ -229,8 +229,7 @@ async (req, res) => {
 }
 ];
 
-
-exports.resetPassword = [
+ exports.resetPassword = [
   verifyToken,
   body('motDePasse1')
     .notEmpty().withMessage("Le mot de passe est requis.")
@@ -255,18 +254,23 @@ exports.resetPassword = [
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { motDePasse1,date_naissance,lieu_naissance } = req.body;
-    const test1 = await authModel.verification(motDePasse1,req.user.id);
-    const test2 = await authModel.test(date_naissance,lieu_naissance,req.user.id);
+    
+    const { motDePasse1, date_naissance, lieu_naissance } = req.body;
+    
     try {
-      if (test1===1) {
+      const test1 = await authModel.verification(motDePasse1, req.user.id);
+      const test2 = await authModel.test(date_naissance, lieu_naissance, req.user.id);
+      
+      if (test1 === 1) {
         return res.status(401).json({ message: "Ce mot de passe est déjà utilisé !!" });
       }
-      if(test2==0){
+      if (test2 == 0) {
         return res.status(401).json({ message: "Le lieu ou la date de naissance sont pas valide !!" });
       }
+      
       const motDePasseSecurise = await bcrypt.hash(motDePasse1, 10);
       const result = await authModel.changement(motDePasseSecurise, req.user.id);
+      
       if (result) {
         return res.status(201).json({ message: "Le mot de passe a été modifié avec succès" });
       } else {
