@@ -29,7 +29,9 @@ const mutations = {
 const actions = {
   async login({ commit }, credentials) {
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/login", credentials);
+      console.log('Hello1');
+      const response = await axios.post("http://localhost:3000/authentification/login", credentials);
+      console.log(response.token);
       commit("SET_USER", response.data.user);
       commit("SET_TOKEN", response.data.token);
     } catch (error) {

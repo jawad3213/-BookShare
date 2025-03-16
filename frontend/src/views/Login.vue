@@ -8,7 +8,7 @@
       <h2>Welcome back 👋</h2>
       <p> Dive into your world of endless stories and embark on your next great adventure.</p>
       </div>
-      <form @submit.prevent="login">
+      <form @submit.prevent="logine">
         <input v-model="email" type="email" placeholder="Email" required />
         <input v-model="motDePasse" type="password" placeholder="Password" required />
         <button type="submit">Sign in<router-link to="/"></router-link></button>
@@ -37,9 +37,11 @@ export default {
   },
   methods: {
     ...mapActions("auth", ["login"]),
-    async login() {
+    async logine() {
       try {
-        await this.login({ email: this.email, motDePasse: this.motDePasse });
+        console.log('Helloooo');
+        const credentials = { email: this.email, motDePasse: this.motDePasse };
+        await this.login(credentials);
         this.$router.push("/");
       } catch (error) {
         this.errorMessage = error?.message || "Login failed ❌";

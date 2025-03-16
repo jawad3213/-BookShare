@@ -1,4 +1,6 @@
 const pool = require("../db");
+//const pool = require("../test_db"); 
+
 const bcrypt = require('bcryptjs');
 
 exports.ajouterUtilisateur = async (id,nom,email,motDePasse,date_naissance,lieu_naissance) => {
@@ -69,7 +71,7 @@ exports.test = async (date_naissance, lieu_naissance, id) => {
     );
 
     if (result.rows.length === 0) {
-        return 0; // utilisateur nexiste pas
+        return 0; 
     }
 
     const user = result.rows[0];
@@ -80,10 +82,5 @@ exports.test = async (date_naissance, lieu_naissance, id) => {
     return (
         dateDB === date_naissance &&
         user.lieu_naissance.trim().toLowerCase() === lieu_naissance.trim().toLowerCase()
-    ) ? 1 : 0;
+    ) ? 1 : 0;
 };
-
-
-
-
-  

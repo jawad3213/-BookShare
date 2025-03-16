@@ -54,7 +54,7 @@ exports.FuncInscription = [
       if (disallowedPasswords.includes(value.toLowerCase())) {
         throw new Error('Veuillez choisir un mot de passe plus sécurisé.');
       }
-      if (!/^(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)) {
+      if (!/^(?=.[A-Z])(?=.\d).{8,}$/.test(value)) {
         throw new Error("Doit contenir au moins une majuscule et un chiffre.");
       }
       return true;
@@ -235,7 +235,7 @@ exports.resetPassword = [
   body('motDePasse1')
     .notEmpty().withMessage("Le mot de passe est requis.")
     .isLength({ min: 8 }).withMessage("Le mot de passe doit contenir au moins 8 caractères.")
-    .matches(/^(?=.*[A-Z])(?=.*\d)/).withMessage("Doit contenir au moins une majuscule et un chiffre."),
+    .matches(/^(?=.[A-Z])(?=.\d)/).withMessage("Doit contenir au moins une majuscule et un chiffre."),
   body('motDePasse2')
     .notEmpty().withMessage("Le mot de passe est requis.")
     .custom((value, { req }) => {
@@ -275,6 +275,6 @@ exports.resetPassword = [
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Erreur serveur ❌" });
-    }
-  }
+    }
+  }
 ];

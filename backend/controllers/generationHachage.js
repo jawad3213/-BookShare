@@ -1,6 +1,6 @@
 // ce fichier est pour generer des mots de passe chiffres pour les utilise pour les administrateurs
 // Ce fichier génère des mots de passe hachés pour les administrateurs
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 exports.hachage = async (req, res) => {
     try {
