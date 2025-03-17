@@ -1,4 +1,6 @@
 const pool = require("../db");
+//const pool = require("../test_db"); 
+
 const bcrypt = require('bcryptjs');
 
 exports.ajouterUtilisateur = async (id,nom,email,motDePasse,date_naissance,lieu_naissance) => {
