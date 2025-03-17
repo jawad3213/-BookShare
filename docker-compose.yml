@@ -1,18 +1,39 @@
 version: "3.8"
 
 services:
+  db:
+    image: postgres:14
+    container_name: bookshare_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bookshare
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
   backend:
-    build: ./backend
-    container_name: backend_container
-    restart: always
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    container_name: bookshare_backend
     ports:
       - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - ./backend/.env
 
   frontend:
-    build: ./frontend
-    container_name: frontend_container
-    restart: always
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: bookshare_frontend
     ports:
-      - "8080:80"
+      - "9090:80"
     depends_on:
       - backend
+
+volumes:
+  db_data:
